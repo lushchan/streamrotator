@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "Install stream rotator to /home/ftpaccess/domain.com/www/r33x"
-echo "edit file domains before installation"
+echo "edit file domain before installation"
+touch ./domains
+vim ./domains
 echo "Continue? (y/n)"
 read -e run
 if [ "$run" == n ] ; then
