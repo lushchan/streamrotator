@@ -24,6 +24,7 @@ unzip /home/ftpaccess/$domain/www/r33x/install55.zip -d /home/ftpaccess/$domain/
 echo "$dbname"
 echo "$dbuser"
 echo "$dbpass"
+echo -e "* * * * * cd /home/ftpaccess/$domain/www/r33x/streamrotator; /usr/bin/php -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/ftpaccess
 done
 echo "DONE! Go to URL to complete installation. Dont forget about database credentials. Check some lines before!!!"
 exit
