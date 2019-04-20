@@ -38,8 +38,7 @@ echo "dbHost: localhost"
 echo "dbName $dbname"
 echo "dbUser: $dbuser"
 echo "dbPassword: $dbpass"
-echo -e "* * * * * cd /home/$username/$domain/www/$workdir; /usr/bin/php -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/$username
+echo -e "* * * * * cd /home/$username/$domain/$docroot/$workdir; /usr/bin/php -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/$username
 echo "DONE! Go to URL to complete installation. Dont forget about database credentials. Check some lines before!!!"
 done
 exit
-fi
