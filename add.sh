@@ -15,7 +15,7 @@ else
 cat ./domains | while read domain
 do
 mkdir -p /home/$username/$domain/www/$workdir
-chmod 777 /home/ftpaccess/$domain/www/r33x
+chmod 777 /home/$username/$domain/www/$workdir
 dbname=r3`echo $domain | cut -d / -f 4| sed -e 's/-/_/g'|sed 's|\.||g'`
 dbuser=r3u`echo $domain | cut -d / -f 4|cut -c 1-13 | sed 's|-|_|g'|sed 's|\.||g'`
 dbpass=`pwgen 12 1`
@@ -29,7 +29,7 @@ echo "dbHost: localhost"
 echo "dbName $dbname"
 echo "dbUser: $dbuser"
 echo "dbPassword: $dbpass"
-echo -e "* * * * * cd /home/ftpaccess/$domain/www/r33x/streamrotator; /usr/bin/php -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/ftpaccess
+echo -e "* * * * * cd /home/$username/$domain/www/$workdir; /usr/bin/php -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/ftpaccess
 done
 echo "DONE! Go to URL to complete installation. Dont forget about database credentials. Check some lines before!!!"
 fi
