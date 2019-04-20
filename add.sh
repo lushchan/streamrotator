@@ -23,8 +23,8 @@ mysql -e "CREATE DATABASE ${dbname} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 mysql -e "CREATE USER ${dbuser}@localhost IDENTIFIED BY '${dbpass}';"
 mysql -e "GRANT ALL PRIVILEGES ON ${dbname}.* TO '${dbuser}'@'localhost';"
 mysql -e "FLUSH PRIVILEGES;"
-wget http://streamscripts.com/rotator/install55.zip -P /home/ftpaccess/$domain/www/r33x
-unzip /home/ftpaccess/$domain/www/r33x/install55.zip -d /home/ftpaccess/$domain/www/r33x
+wget http://streamscripts.com/rotator/install55.zip -P /home/$username/$domain/www/$workdir
+unzip /home/$username/$domain/www/$workdir/install55.zip -d /home/$username/$domain/www/$workdir
 echo "dbHost: localhost"
 echo "dbName $dbname"
 echo "dbUser: $dbuser"
@@ -32,4 +32,5 @@ echo "dbPassword: $dbpass"
 echo -e "* * * * * cd /home/ftpaccess/$domain/www/r33x/streamrotator; /usr/bin/php -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/ftpaccess
 done
 echo "DONE! Go to URL to complete installation. Dont forget about database credentials. Check some lines before!!!"
+fi
 exit
