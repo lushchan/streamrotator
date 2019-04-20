@@ -1,9 +1,9 @@
 #!/bin/bash -e
-#cat /dev/null > ./domains
+cat /dev/null > ./domains
 echo "Install stream rotator"
 echo "edit file "domains" before installation"
 #touch ./domains
-#vim ./domains
+vim ./domains
 echo "User name:(default: ftpaccess)"
 read -e username
 if [[ -z $username ]]; then
