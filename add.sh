@@ -33,4 +33,5 @@ echo -e "* * * * * cd /home/$username/$domain/www/$workdir; /usr/bin/php -q cron
 done
 echo "DONE! Go to URL to complete installation. Dont forget about database credentials. Check some lines before!!!"
 fi
+cat /dev/null > ./domains
 exit
