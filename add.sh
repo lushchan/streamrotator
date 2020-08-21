@@ -32,7 +32,7 @@ do
   cp install.php $r33xroot/install.php
   dbname=r3`echo $domain | cut -d / -f 4| sed -e 's/-/_/g'|sed 's|\.||g'`
   dbuser=r3u`echo $domain | cut -d / -f 4|cut -c 1-13 | sed 's|-|_|g'|sed 's|\.||g'`
-  dbpass=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13`
+  dbpass=`head /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 13; echo "!"`
   mysql -e "CREATE DATABASE ${dbname} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
   mysql -e "CREATE USER ${dbuser}@localhost IDENTIFIED BY '${dbpass}';"
   mysql -e "GRANT ALL PRIVILEGES ON ${dbname}.* TO '${dbuser}'@'localhost';"
