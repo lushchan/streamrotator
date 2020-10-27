@@ -15,10 +15,21 @@ if [[ -z phpver ]]; then
   phppath=$phppathdef
 fi
 phppath=`which php$phpver`
+
+r33xphp5="http://streamscripts.com/rotator/install.zip"
+r33xphp7="http://streamscripts.com/rotator/install_71.zip"
 #download section
-wget http://streamscripts.com/rotator/install.zip
+if [[ "$phpver" == "5"* ]] ; then
+wget $r33xphp5
 unzip install.zip
+elif [[ "$phpver" == "7"* ]] ; then
+wget $r33xphp7
+unzip install_71.zip
+else
+        echo "Chtoto poshlo ne tak"
+fi
 #
+
 mysqlloc=`which mysql`
 mysqldumploc=`which mysqldump`
 convertloc=`which convert`
