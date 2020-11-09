@@ -60,4 +60,5 @@ do
   echo -e "* * * * * cd $r33xroot; $phppath -q cron.php 1>/dev/null 2>/dev/null \n" >> /var/spool/cron/$username
   echo "DONE! Go to URL to complete installation. Dont forget about database credentials. Check some lines before!!!"
 done
+service crond reload
 exit
